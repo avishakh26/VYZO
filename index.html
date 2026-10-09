@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 
 <html class="dark scroll-smooth" lang="en"><head><meta charset="utf-8"/><title>VYZO — Pay-per-view short-form distribution</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23a3e635'/%3E%3Cpath d='M8 9l8 15 8-15' fill='none' stroke='%23121416' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"/><meta name="description" content="Independent editors turn your long-form videos into short clips and post them everywhere. You pay only for verified views."/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="styles.css?v=7" rel="stylesheet"/><style>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="styles.css?v=8" rel="stylesheet"/><style>
+  /* TiltedCard - vanilla port of React Bits <TiltedCard /> */
+  .tilt-card{transform-style:preserve-3d;will-change:transform}
+  .tilt-card>*{transform:translateZ(24px)}
+  .tilt-card.is-tilting{box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+</style><style>
   /* Animated solution cards */
   .demo-card{display:flex;flex-direction:column;border-radius:24px;background:#1a1c1e;border:1px solid rgba(66,73,54,.4);overflow:hidden}
   .demo-stage{position:relative;height:224px;display:flex;align-items:center;justify-content:center;padding:24px 24px 0;overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,#000 84%,transparent);mask-image:linear-gradient(to bottom,#000 84%,transparent)}
@@ -449,7 +454,7 @@
 <section class="w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 py-24 lg:py-32">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
 <!-- Brands -->
-<div class="p-6 sm:p-8 lg:p-12 rounded-3xl bg-surface-container border border-outline-variant/30 flex flex-col scroll-mt-20 lg:scroll-mt-24" id="for-brands">
+<div class="p-6 sm:p-8 lg:p-12 rounded-3xl bg-surface-container border border-outline-variant/30 flex flex-col scroll-mt-20 lg:scroll-mt-24 tilt-card" data-tilt id="for-brands">
 <span class="font-label-caps text-label-caps uppercase tracking-widest text-primary-container mb-4">For brands &amp; creators</span>
 <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-8">Turn your library into a distribution engine.</h3>
 <ul class="space-y-4 mb-10 flex-1">
@@ -464,7 +469,7 @@
 </div>
 </div>
 <!-- Clippers -->
-<div class="p-6 sm:p-8 lg:p-12 rounded-3xl bg-surface-container border border-outline-variant/30 flex flex-col scroll-mt-20 lg:scroll-mt-24" id="for-clippers">
+<div class="p-6 sm:p-8 lg:p-12 rounded-3xl bg-surface-container border border-outline-variant/30 flex flex-col scroll-mt-20 lg:scroll-mt-24 tilt-card" data-tilt id="for-clippers">
 <span class="inline-flex items-center gap-2 font-label-caps text-label-caps uppercase tracking-widest text-secondary mb-4"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>For clippers · Now onboarding</span>
 <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-8">Get paid for every view your edits earn.</h3>
 <ul class="space-y-4 mb-8 flex-1">
@@ -637,6 +642,51 @@
       demoCards.forEach(card => demoObserver.observe(card));
     } else {
       demoCards.forEach(card => card.classList.add('is-playing'));
+    }
+
+    // TiltedCard - cards tilt toward the cursor on a spring (damping 30, stiffness 100, mass 2).
+    // Mouse/trackpad only; skipped on touch screens and for reduced-motion users.
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const ROTATE_AMPLITUDE = 6, SCALE_ON_HOVER = 1.03, PERSPECTIVE = 900;
+      const K = 100, C = 30, M = 2;
+      document.querySelectorAll('[data-tilt]').forEach(card => {
+        const springs = { rx: { x: 0, v: 0, t: 0 }, ry: { x: 0, v: 0, t: 0 }, s: { x: 1, v: 0, t: 1 } };
+        let frame = null, last = 0;
+        const render = () => {
+          card.style.transform = `perspective(${PERSPECTIVE}px) rotateX(${springs.rx.x}deg) rotateY(${springs.ry.x}deg) scale(${springs.s.x})`;
+        };
+        const tick = now => {
+          let dt = Math.min((now - last) / 1000, 0.064); last = now;
+          let moving = false;
+          for (; dt > 0; dt -= 1 / 240) {
+            const h = Math.min(1 / 240, dt);
+            Object.values(springs).forEach(sp => {
+              sp.v += ((-K * (sp.x - sp.t) - C * sp.v) / M) * h;
+              sp.x += sp.v * h;
+            });
+          }
+          Object.values(springs).forEach(sp => {
+            if (Math.abs(sp.x - sp.t) > 0.001 || Math.abs(sp.v) > 0.001) moving = true;
+            else { sp.x = sp.t; sp.v = 0; }
+          });
+          render();
+          frame = moving ? requestAnimationFrame(tick) : null;
+          if (!moving && springs.s.t === 1) { card.style.transform = ''; card.classList.remove('is-tilting'); }
+        };
+        const kick = () => { if (!frame) { last = performance.now(); frame = requestAnimationFrame(tick); } };
+
+        card.addEventListener('mouseenter', () => { springs.s.t = SCALE_ON_HOVER; card.classList.add('is-tilting'); kick(); });
+        card.addEventListener('mousemove', e => {
+          const r = card.getBoundingClientRect();
+          const offsetX = e.clientX - r.left - r.width / 2;
+          const offsetY = e.clientY - r.top - r.height / 2;
+          springs.rx.t = (offsetY / (r.height / 2)) * -ROTATE_AMPLITUDE;
+          springs.ry.t = (offsetX / (r.width / 2)) * ROTATE_AMPLITUDE;
+          kick();
+        });
+        card.addEventListener('mouseleave', () => { springs.rx.t = 0; springs.ry.t = 0; springs.s.t = 1; kick(); });
+      });
     }
 
     // Mobile / tablet menu
