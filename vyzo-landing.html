@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary-fixed-dim": "#98da27",
+          "surface-bright": "#38393c",
+          "on-error-container": "#ffdad6",
+          "on-surface": "#e2e2e5",
+          "on-primary-fixed": "#121f00",
+          "inverse-on-surface": "#2f3033",
+          "on-background": "#e2e2e5",
+          "tertiary-fixed-dim": "#7bd0ff",
+          "surface-container-low": "#1a1c1e",
+          "on-tertiary": "#00354a",
+          "tertiary": "#def1ff",
+          "on-tertiary-fixed": "#001e2c",
+          "surface-dim": "#121416",
+          "on-primary": "#213600",
+          "outline": "#8c947c",
+          "on-primary-container": "#416400",
+          "inverse-primary": "#446900",
+          "on-error": "#690005",
+          "on-tertiary-container": "#006184",
+          "inverse-surface": "#e2e2e5",
+          "tertiary-container": "#9ddaff",
+          "surface-variant": "#333537",
+          "error-container": "#93000a",
+          "outline-variant": "#424936",
+          "error": "#ffb4ab",
+          "background": "#121416",
+          "secondary-fixed": "#6ffbbe",
+          "on-surface-variant": "#c2cab0",
+          "primary-container": "#a3e635",
+          "on-secondary": "#003824",
+          "on-secondary-fixed": "#002113",
+          "on-tertiary-fixed-variant": "#004c69",
+          "on-secondary-container": "#00311f",
+          "primary": "#ccff80",
+          "tertiary-fixed": "#c4e7ff",
+          "surface-tint": "#98da27",
+          "surface-container-lowest": "#0c0e10",
+          "secondary-fixed-dim": "#4edea3",
+          "on-secondary-fixed-variant": "#005236",
+          "primary-fixed": "#b2f746",
+          "surface-container": "#1e2022",
+          "surface-container-highest": "#333537",
+          "surface-container-high": "#282a2c",
+          "secondary": "#4edea3",
+          "on-primary-fixed-variant": "#334f00",
+          "surface": "#121416",
+          "secondary-container": "#00a572"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "space-md": "1rem",
+          "margin-tablet": "2rem",
+          "space-xl": "2.5rem",
+          "margin": "1rem",
+          "gutter": "1.5rem",
+          "space-lg": "1.5rem",
+          "space-3xl": "6rem",
+          "space-sm": "0.5rem",
+          "gutter-desktop": "2rem",
+          "space-2xl": "4rem",
+          "margin-desktop": "4rem"
+        },
+        "fontFamily": {
+          "body-sm": [
+            "Inter"
+          ],
+          "display-hero": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "label-caps": [
+            "Inter"
+          ],
+          "headline-xl": [
+            "Plus Jakarta Sans"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "label-lg": [
+            "Inter"
+          ],
+          "metric-display": [
+            "Plus Jakarta Sans"
+          ],
+          "display-hero-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-sm": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {
+          "body-sm": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ],
+          "display-hero": [
+            "72px",
+            {
+              "lineHeight": "80px",
+              "letterSpacing": "-0.035em",
+              "fontWeight": "800"
+            }
+          ],
+          "headline-lg": [
+            "40px",
+            {
+              "lineHeight": "48px",
+              "letterSpacing": "-0.025em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-lg": [
+            "18px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "label-caps": [
+            "11px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.08em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-xl": [
+            "56px",
+            {
+              "lineHeight": "64px",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-md": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "-0.005em",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.03em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "metric-display": [
+            "48px",
+            {
+              "lineHeight": "52px",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "800"
+            }
+          ],
+          "display-hero-mobile": [
+            "40px",
+            {
+              "lineHeight": "48px",
+              "letterSpacing": "-0.025em",
+              "fontWeight": "800"
+            }
+          ],
+          "headline-xl-mobile": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-md": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen">
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl border-b border-surface-container-highest/70">
+<div class="h-16 lg:h-20 max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 flex items-center justify-between gap-6">
+<div class="flex items-center gap-4 shrink-0">
+<a class="flex items-center gap-3" data-path="landing-overview" href="#"><img alt="VYZO Logo" class="h-7 lg:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VVqWmYU3L9bzLnuJSu0CGMbb_-nu38wlIfQaWW80jNZSuWh7ev-W1Rof-7eYy2ES9FMSexFYLK5tutKaVJKFR2ke5qg7t2MW_Kl8BPgr37ULshbnBC8dtGN0p8hpRMlBtezVsiM8gom8VA7klTBjVFUBNn7UW7tuRQBBKKftOQR4kPkV_rHdKZUsJEBpUPxRiJmHjjiIQMfE2lcur6xhKpPqYwy1tnrKqpVDWAfTGUJ323UOg4YcbB"/><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">VYZO</span></a>
+<span class="hidden md:inline-flex items-center px-2 py-0.5 rounded-full border border-surface-container-highest font-label-caps text-label-caps uppercase text-on-surface-variant">Beta</span>
+</div>
+<nav class="hidden lg:flex items-center gap-8" data-active-classes="text-on-surface font-semibold">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="how-it-works" href="#how-it-works">How It Works</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="platforms" href="#platforms">Platforms</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="for-brands" href="#for-brands">For Brands</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="for-clippers" href="#for-clippers">For Clippers</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="frequently-asked-questions" href="#faq">FAQ</a>
+</nav>
+<div class="flex items-center gap-2 sm:gap-4 shrink-0">
+<a class="hidden lg:inline-block font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors px-3 py-2" data-path="login" href="#">Log In</a>
+<a class="inline-flex items-center justify-center font-label-lg text-label-lg px-4 sm:px-5 py-2.5 rounded-lg bg-primary-container text-on-primary-container font-bold hover:bg-primary transition-colors duration-150 whitespace-nowrap" data-path="launch-campaign" href="#"><span class="sm:hidden">Launch</span><span class="hidden sm:inline">Launch a Campaign</span></a>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu" class="lg:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-lg text-on-surface hover:bg-surface-container focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-container" id="menu-toggle" type="button">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile / tablet menu -->
+<div class="lg:hidden hidden border-t border-surface-container-highest/70 bg-surface-container-lowest max-h-[calc(100dvh-4rem)] overflow-y-auto" id="mobile-menu">
+<nav class="max-w-7xl mx-auto px-5 sm:px-6 py-4 flex flex-col" data-active-classes="text-on-surface font-semibold">
+<a class="py-4 border-b border-surface-container-highest/60 font-headline-sm text-body-lg text-on-surface" data-path="how-it-works" href="#how-it-works">How It Works</a>
+<a class="py-4 border-b border-surface-container-highest/60 font-headline-sm text-body-lg text-on-surface" data-path="platforms" href="#platforms">Platforms</a>
+<a class="py-4 border-b border-surface-container-highest/60 font-headline-sm text-body-lg text-on-surface" data-path="for-brands" href="#for-brands">For Brands</a>
+<a class="py-4 border-b border-surface-container-highest/60 font-headline-sm text-body-lg text-on-surface" data-path="for-clippers" href="#for-clippers">For Clippers</a>
+<a class="py-4 font-headline-sm text-body-lg text-on-surface" data-path="frequently-asked-questions" href="#faq">FAQ</a>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 pb-2">
+<a class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg border border-outline-variant/40 text-on-surface font-label-lg text-label-lg font-semibold" data-path="login" href="#">Log In</a>
+<a class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg font-bold" data-path="launch-campaign" href="#launch-campaign">Launch a Campaign</a>
+</div>
+</nav>
+</div>
+</header>
+<main class="w-full pt-16 lg:pt-20 bg-surface"><div class="flex flex-col w-full text-on-surface">
+
+<!-- HERO -->
+<section class="relative w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 pt-14 pb-20 sm:pt-20 lg:pt-28 lg:pb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-12 items-center">
+<div class="lg:col-span-7 flex flex-col items-start">
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/30 mb-8">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md text-on-surface-variant">Pay-per-view short-form distribution</span>
+</span>
+<h1 class="font-display-hero text-display-hero-mobile sm:text-headline-xl lg:text-display-hero text-on-surface tracking-tight mb-6">
+          Your content deserves <span class="text-primary-container">more reach.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mb-10">
+          Independent editors turn your long-form videos into short clips and post them everywhere. You pay only for verified views.
+        </p>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto mb-8">
+<a class="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg font-bold shadow-[0_0_32px_-4px_rgba(163,230,53,0.45)] hover:bg-primary transition-all duration-200 hover:-translate-y-0.5" href="#launch-campaign">
+<span>Launch Your First Campaign</span>
+<span class="material-symbols-outlined text-lg transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg text-on-surface hover:bg-surface-container font-label-lg text-label-lg font-semibold transition-colors" href="#how-it-works">
+<span class="material-symbols-outlined text-primary text-xl">play_circle</span>
+<span>See How It Works</span>
+</a>
+</div>
+<ul class="flex flex-wrap gap-x-6 gap-y-2 text-on-surface-variant font-body-sm text-body-sm">
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary-container text-base">check</span>No upfront retainers</li>
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary-container text-base">check</span>Hard budget caps</li>
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary-container text-base">check</span>Bot views filtered</li>
+</ul>
+</div>
+<!-- Product mockup -->
+<div class="lg:col-span-5 w-full max-w-xl mx-auto lg:max-w-none">
+<div class="relative rounded-2xl bg-surface-container-low border border-outline-variant/30 p-5 sm:p-6 shadow-2xl overflow-hidden">
+<div class="absolute -right-16 -top-16 w-56 h-56 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative flex items-start justify-between gap-4 pb-5">
+<div class="min-w-0">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Active campaign</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1 truncate">Dhaka Tech Summit Keynote</h2>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary/10 text-secondary font-label-md text-label-md shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>Day 14/30
+            </span>
+</div>
+<div class="relative grid grid-cols-2 gap-3 pb-5">
+<div class="bg-surface-container p-3.5 rounded-lg">
+<div class="font-label-md text-label-md text-on-surface-variant">Qualified views</div>
+<div class="font-headline-md text-headline-md text-on-surface mt-1">842.5K</div>
+<div class="font-label-md text-label-md text-secondary mt-0.5">+18.4% today</div>
+</div>
+<div class="bg-surface-container p-3.5 rounded-lg">
+<div class="font-label-md text-label-md text-on-surface-variant">Budget used</div>
+<div class="font-headline-md text-headline-md text-on-surface mt-1">72%</div>
+<div class="font-label-md text-label-md text-on-surface-variant mt-0.5">of $3,500</div>
+</div>
+</div>
+<div class="relative space-y-2">
+<div class="flex items-center justify-between gap-3 p-3 rounded-lg bg-surface-container/60">
+<div class="min-w-0">
+<div class="font-label-lg text-label-lg text-on-surface truncate">AI in Bangladesh #04</div>
+<div class="font-body-sm text-[12px] text-on-surface-variant truncate">@shafin_edits · YouTube Shorts</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-label-lg text-label-lg text-on-surface">218K</div>
+<div class="text-[12px] font-semibold text-secondary">$436</div>
+</div>
+</div>
+<div class="flex items-center justify-between gap-3 p-3 rounded-lg bg-surface-container/60">
+<div class="min-w-0">
+<div class="font-label-lg text-label-lg text-on-surface truncate">Fintech Breakdown Hook</div>
+<div class="font-body-sm text-[12px] text-on-surface-variant truncate">@tanvir_cuts · TikTok</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-label-lg text-label-lg text-on-surface">184K</div>
+<div class="text-[12px] font-semibold text-secondary">$368</div>
+</div>
+</div>
+<div class="flex items-center justify-between gap-3 p-3 rounded-lg bg-surface-container/60">
+<div class="min-w-0">
+<div class="font-label-lg text-label-lg text-on-surface truncate">Founder 30s Advice</div>
+<div class="font-body-sm text-[12px] text-on-surface-variant truncate">@zahid_motion · Instagram Reels</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-label-lg text-label-lg text-on-surface">92K</div>
+<div class="text-[12px] font-semibold text-secondary">$184</div>
+</div>
+</div>
+</div>
+<p class="relative mt-4 font-label-md text-[11px] text-on-surface-variant/70 text-right">Sample data for illustration</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PROOF STRIP -->
+<div class="w-full border-y border-outline-variant/20 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 py-8 grid grid-cols-3 gap-4 text-center">
+<div><div class="font-headline-md text-headline-sm sm:text-headline-md text-on-surface">4.2M+</div><div class="font-label-md text-label-md text-on-surface-variant mt-1">Views verified (30d)</div></div>
+<div><div class="font-headline-md text-headline-sm sm:text-headline-md text-primary-container">$2–4.50</div><div class="font-label-md text-label-md text-on-surface-variant mt-1">Typical CPM</div></div>
+<div><div class="font-headline-md text-headline-sm sm:text-headline-md text-secondary">99.8%</div><div class="font-label-md text-label-md text-on-surface-variant mt-1">Fraud detection</div></div>
+</div>
+</div>
+
+<!-- PROBLEM -->
+<section class="w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 py-24 lg:py-32">
+<div class="max-w-2xl mb-14">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary">The problem</span>
+<h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface mt-3">Creating content is only half the job.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant/20 rounded-2xl overflow-hidden border border-outline-variant/20 mb-10">
+<div class="bg-surface p-6 sm:p-8">
+<span class="material-symbols-outlined text-error mb-5">inventory_2</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Your archive sits idle</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Podcasts, keynotes and interviews rarely get cut into clips.</p>
+</div>
+<div class="bg-surface p-6 sm:p-8">
+<span class="material-symbols-outlined text-primary-fixed mb-5">engineering</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Editors are slow to hire</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">In-house teams mean weeks of setup and fixed payroll.</p>
+</div>
+<div class="bg-surface p-6 sm:p-8">
+<span class="material-symbols-outlined text-tertiary-fixed-dim mb-5">visibility_off</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Agencies can't prove results</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Retainers get paid whether or not anyone watches.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 rounded-2xl p-8 bg-surface-container border border-primary-container/25">
+<p class="font-headline-sm text-headline-sm md:text-headline-md text-on-surface max-w-2xl">
+<span class="text-primary-container">VYZO fixes this.</span> Many editors clip your content in parallel, and you pay per verified view.
+        </p>
+<a class="inline-flex items-center gap-2 font-label-lg text-label-lg font-semibold text-on-surface hover:text-primary-container transition-colors shrink-0" href="#how-it-works">See how <span class="material-symbols-outlined text-base">arrow_downward</span></a>
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="w-full bg-surface-container-lowest/50 border-y border-outline-variant/20 py-24 lg:py-32 scroll-mt-16 lg:scroll-mt-20" id="how-it-works">
+<div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12">
+<div class="max-w-2xl mb-14">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary">How it works</span>
+<h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface mt-3">Four steps from long-form to everywhere.</h2>
+</div>
+<ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+<li class="border-t border-outline-variant/40 pt-6">
+<span class="font-metric-display text-headline-md text-primary-container">01</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-4 mb-2">Upload your content</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Add YouTube, Drive or MP4 links plus brand guidelines.</p>
+</li>
+<li class="border-t border-outline-variant/40 pt-6">
+<span class="font-metric-display text-headline-md text-primary-container">02</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-4 mb-2">Set rules &amp; budget</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Choose your CPM, budget cap and target platforms.</p>
+</li>
+<li class="border-t border-outline-variant/40 pt-6">
+<span class="font-metric-display text-headline-md text-primary-container">03</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-4 mb-2">Clippers distribute</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Vetted editors cut clips and post them on their own channels.</p>
+</li>
+<li class="border-t border-outline-variant/40 pt-6">
+<span class="font-metric-display text-headline-md text-secondary">04</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-4 mb-2">Verify &amp; pay</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Bot traffic is filtered out. Payouts run automatically.</p>
+</li>
+</ol>
+</div>
+</section>
+
+<!-- PLATFORMS -->
+<section class="w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 py-24 lg:py-32 scroll-mt-16 lg:scroll-mt-20" id="platforms">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary">Platforms</span>
+<h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface mt-3 mb-4">One campaign. Four channels.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Clips go out on creators' own accounts, so your brand profile never gets spammed.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="p-5 sm:p-6 rounded-2xl bg-surface-container-low border border-outline-variant/25 hover:border-outline-variant/60 transition-colors">
+<span class="material-symbols-outlined text-2xl text-primary-container">public</span>
+<h3 class="font-headline-sm text-body-lg sm:text-headline-sm text-on-surface mt-4">Facebook Reels</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Mass reach in South Asia</p>
+</div>
+<div class="p-5 sm:p-6 rounded-2xl bg-surface-container-low border border-outline-variant/25 hover:border-outline-variant/60 transition-colors">
+<span class="material-symbols-outlined text-2xl text-secondary">photo_camera</span>
+<h3 class="font-headline-sm text-body-lg sm:text-headline-sm text-on-surface mt-4">Instagram Reels</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">High-intent urban audiences</p>
+</div>
+<div class="p-5 sm:p-6 rounded-2xl bg-surface-container-low border border-outline-variant/25 hover:border-outline-variant/60 transition-colors">
+<span class="material-symbols-outlined text-2xl text-primary">smart_display</span>
+<h3 class="font-headline-sm text-body-lg sm:text-headline-sm text-on-surface mt-4">YouTube Shorts</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Evergreen search discovery</p>
+</div>
+<div class="p-5 sm:p-6 rounded-2xl bg-surface-container-low border border-outline-variant/25 hover:border-outline-variant/60 transition-colors">
+<span class="material-symbols-outlined text-2xl text-secondary-fixed">bolt</span>
+<h3 class="font-headline-sm text-body-lg sm:text-headline-sm text-on-surface mt-4">TikTok</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Fast trend momentum</p>
+</div>
+</div>
+</section>
+
+<!-- BENEFITS -->
+<section class="w-full bg-surface-container-lowest/60 border-y border-outline-variant/20 py-24 lg:py-32">
+<div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12">
+<div class="max-w-2xl mb-14">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary">Why VYZO</span>
+<h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface mt-3">Built for results, not retainers.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 lg:gap-8">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container mb-6"><span class="material-symbols-outlined text-2xl">speed</span></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Scale without hiring</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Dozens of editors work at once. 10x the clips, zero new headcount.</p>
+</div>
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary mb-6"><span class="material-symbols-outlined text-2xl">price_check</span></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Pay for real views</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Every payout is tied to verified 3-second+ views. Nothing else.</p>
+</div>
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary mb-6"><span class="material-symbols-outlined text-2xl">admin_panel_settings</span></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Stay in control</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Set spend caps, ban topics and approve hooks before they go live.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOR BRANDS & FOR CLIPPERS -->
+<section class="w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 py-24 lg:py-32">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+<!-- Brands -->
+<div class="p-6 sm:p-8 lg:p-12 rounded-3xl bg-surface-container border border-outline-variant/30 flex flex-col scroll-mt-20 lg:scroll-mt-24" id="for-brands">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary-container mb-4">For brands &amp; creators</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-8">Turn your library into a distribution engine.</h3>
+<ul class="space-y-4 mb-10 flex-1">
+<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface"><span class="material-symbols-outlined text-primary-container text-xl">check_circle</span>One place for all your media and guidelines</li>
+<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface"><span class="material-symbols-outlined text-primary-container text-xl">check_circle</span>Fixed CPM with a hard budget cap</li>
+<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface"><span class="material-symbols-outlined text-primary-container text-xl">check_circle</span>One invoice instead of dozens of payouts</li>
+<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface"><span class="material-symbols-outlined text-primary-container text-xl">check_circle</span>Live view and editor tracking</li>
+</ul>
+<div class="flex flex-col xl:flex-row gap-3">
+<a class="w-full xl:w-auto px-6 py-3.5 rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg font-bold text-center hover:bg-primary transition-colors" href="#launch-campaign">Discuss Your First Campaign</a>
+<a class="w-full xl:w-auto px-6 py-3.5 rounded-lg border border-outline-variant/40 text-on-surface font-label-lg text-label-lg font-semibold text-center hover:bg-surface-container-high transition-colors" href="mailto:brands@vyzo.network">Book a 15-Min Call</a>
+</div>
+</div>
+<!-- Clippers -->
+<div class="p-6 sm:p-8 lg:p-12 rounded-3xl bg-surface-container border border-outline-variant/30 flex flex-col scroll-mt-20 lg:scroll-mt-24" id="for-clippers">
+<span class="inline-flex items-center gap-2 font-label-caps text-label-caps uppercase tracking-widest text-secondary mb-4"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>For clippers · Now onboarding</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-8">Get paid for every view your edits earn.</h3>
+<ul class="space-y-4 mb-8 flex-1">
+<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span>Pick campaigns in tech, business, lifestyle and more</li>
+<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span>Clear payout per 1,000 verified views</li>
+<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span>Cash out via bKash, bank or global wire</li>
+<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span>Higher rates for top performers</li>
+</ul>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">No guaranteed minimums. Earnings depend on approved clips and verified views.</p>
+<a class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg font-bold hover:bg-secondary-fixed transition-colors" href="#clipper-apply">
+<span>Explore Clipper Opportunities</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="w-full bg-surface-container-lowest/50 border-y border-outline-variant/20 py-24 lg:py-32 scroll-mt-16 lg:scroll-mt-20" id="faq">
+<div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-12">
+<div class="text-center mb-12">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary">FAQ</span>
+<h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface mt-3">Questions, answered.</h2>
+</div>
+<div class="divide-y divide-outline-variant/25 border-y border-outline-variant/25" id="faq-list">
+<div>
+<button aria-expanded="false" class="faq-toggle w-full py-6 text-left flex items-center justify-between gap-4 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-container" type="button">
+<span class="font-headline-sm text-body-lg sm:text-headline-sm text-on-surface">What is VYZO?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200 shrink-0">expand_more</span>
+</button>
+<div class="faq-content hidden pb-6 pr-10 text-on-surface-variant font-body-md text-body-md">
+            A marketplace that connects brands and creators with independent short-form editors. Brands pay per verified view instead of upfront agency retainers.
+          </div>
+</div>
+<div>
+<button aria-expanded="false" class="faq-toggle w-full py-6 text-left flex items-center justify-between gap-4 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-container" type="button">
+<span class="font-headline-sm text-body-lg sm:text-headline-sm text-on-surface">How do brand campaigns work?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200 shrink-0">expand_more</span>
+</button>
+<div class="faq-content hidden pb-6 pr-10 text-on-surface-variant font-body-md text-body-md">
+            Upload your long-form media, set guidelines, a CPM and a budget cap. Clippers create and post clips, then submit links for automatic verification.
+          </div>
+</div>
+<div>
+<button aria-expanded="false" class="faq-toggle w-full py-6 text-left flex items-center justify-between gap-4 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-container" type="button">
+<span class="font-headline-sm text-body-lg sm:text-headline-sm text-on-surface">How are clipper rewards calculated?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200 shrink-0">expand_more</span>
+</button>
+<div class="faq-content hidden pb-6 pr-10 text-on-surface-variant font-body-md text-body-md">
+            By the campaign's CPM, typically $2.00–$4.50 per 1,000 qualified (3-second+) views. Payouts accrue once a clip passes review.
+          </div>
+</div>
+<div>
+<button aria-expanded="false" class="faq-toggle w-full py-6 text-left flex items-center justify-between gap-4 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-container" type="button">
+<span class="font-headline-sm text-body-lg sm:text-headline-sm text-on-surface">Which platforms are supported?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200 shrink-0">expand_more</span>
+</button>
+<div class="faq-content hidden pb-6 pr-10 text-on-surface-variant font-body-md text-body-md">
+            YouTube Shorts, TikTok, Instagram Reels and Facebook Reels.
+          </div>
+</div>
+<div>
+<button aria-expanded="false" class="faq-toggle w-full py-6 text-left flex items-center justify-between gap-4 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-container" type="button">
+<span class="font-headline-sm text-body-lg sm:text-headline-sm text-on-surface">Can beginners join as clippers?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200 shrink-0">expand_more</span>
+</button>
+<div class="faq-content hidden pb-6 pr-10 text-on-surface-variant font-body-md text-body-md">
+            Yes. If you can edit with good pacing and follow platform guidelines, you can join. Top performers unlock higher-paying campaigns.
+          </div>
+</div>
+<div>
+<button aria-expanded="false" class="faq-toggle w-full py-6 text-left flex items-center justify-between gap-4 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-container" type="button">
+<span class="font-headline-sm text-body-lg sm:text-headline-sm text-on-surface">How do you handle bot views?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200 shrink-0">expand_more</span>
+</button>
+<div class="faq-content hidden pb-6 pr-10 text-on-surface-variant font-body-md text-body-md">
+            We check view velocity, engagement ratios, geography and known click-farm patterns. Suspicious traffic is never paid out.
+          </div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 py-24 lg:py-32 scroll-mt-16 lg:scroll-mt-20" id="launch-campaign">
+<div class="rounded-3xl bg-surface-container border border-primary-container/30 px-6 py-14 sm:p-14 lg:p-20 relative overflow-hidden">
+<div class="absolute -right-24 -top-24 w-96 h-96 bg-primary-container/15 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -left-24 -bottom-24 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl mx-auto text-center flex flex-col items-center">
+<span class="inline-flex items-center gap-2 font-label-caps text-label-caps uppercase tracking-widest text-primary-container mb-6">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>Alpha slots open
+        </span>
+<h2 class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface mb-6">
+          Ready for <span class="text-primary-container">more reach?</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-md">
+          Launch a campaign in 24 hours. Set your budget, and pay only for verified views.
+        </p>
+<div class="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto mb-8">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary-container text-on-primary-container font-label-lg text-label-lg font-bold shadow-[0_0_32px_-4px_rgba(163,230,53,0.45)] hover:bg-primary transition-all duration-200 hover:-translate-y-0.5" href="#">
+<span>Launch Your First Campaign</span>
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-on-surface hover:bg-surface-container-high font-label-lg text-label-lg font-semibold transition-colors" href="mailto:founders@vyzo.network">
+<span class="material-symbols-outlined text-lg">chat</span>
+<span>Talk to the Founders</span>
+</a>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-base">lock</span>Escrow-protected</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-base">bolt</span>24-hour setup</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-base">tune</span>Full budget control</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Accordion Toggle Vanilla JavaScript Interaction -->
+<script>
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('.material-symbols-outlined');
+
+        button.setAttribute('aria-expanded', !expanded);
+        if (!expanded) {
+          content.classList.remove('hidden');
+          icon.style.transform = 'rotate(180deg)';
+        } else {
+          content.classList.add('hidden');
+          icon.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
+
+    // Mobile / tablet menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const setMenu = open => {
+      menuToggle.setAttribute('aria-expanded', open);
+      menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      menuToggle.querySelector('.material-symbols-outlined').textContent = open ? 'close' : 'menu';
+      mobileMenu.classList.toggle('hidden', !open);
+      document.body.classList.toggle('overflow-hidden', open);
+    };
+    menuToggle.addEventListener('click', () => setMenu(menuToggle.getAttribute('aria-expanded') !== 'true'));
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+  </script>
+</div></main>
+<footer class="w-full bg-surface-container-lowest border-t border-surface-container-highest">
+<div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 pt-16 pb-10">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-10 mb-14">
+<div class="col-span-2 flex flex-col gap-4">
+<div class="flex items-center gap-3"><img alt="VYZO Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VVqWmYU3L9bzLnuJSu0CGMbb_-nu38wlIfQaWW80jNZSuWh7ev-W1Rof-7eYy2ES9FMSexFYLK5tutKaVJKFR2ke5qg7t2MW_Kl8BPgr37ULshbnBC8dtGN0p8hpRMlBtezVsiM8gom8VA7klTBjVFUBNn7UW7tuRQBBKKftOQR4kPkV_rHdKZUsJEBpUPxRiJmHjjiIQMfE2lcur6xhKpPqYwy1tnrKqpVDWAfTGUJ323UOg4YcbB"/><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">VYZO</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">Short-form distribution you pay for by the verified view. Dhaka &amp; global.</p>
+</div>
+<div><div class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface mb-4">Product</div><ul class="flex flex-col gap-3 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" data-path="how-it-works" href="#">How It Works</a></li><li><a class="hover:text-on-surface transition-colors" data-path="platforms" href="#">Platforms Supported</a></li><li><a class="hover:text-on-surface transition-colors" data-path="telemetry-engine" href="#">Telemetry Engine</a></li><li><a class="hover:text-on-surface transition-colors" data-path="attribution-protocol" href="#">Attribution Protocol</a></li></ul></div>
+<div><div class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface mb-4">For Brands</div><ul class="flex flex-col gap-3 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" data-path="for-brands" href="#">Enterprise Campaigns</a></li><li><a class="hover:text-on-surface transition-colors" data-path="launch-campaign" href="#">Performance Bounties</a></li><li><a class="hover:text-on-surface transition-colors" data-path="brand-case-studies" href="#">Case Studies</a></li><li><a class="hover:text-on-surface transition-colors" data-path="brand-pricing" href="#">Pricing Models</a></li></ul></div>
+<div><div class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface mb-4">For Clippers</div><ul class="flex flex-col gap-3 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" data-path="for-clippers" href="#">Clipping Network</a></li><li><a class="hover:text-on-surface transition-colors" data-path="creator-payouts" href="#">Instant Payouts</a></li><li><a class="hover:text-on-surface transition-colors" data-path="leaderboard" href="#">Leaderboard</a></li><li><a class="hover:text-on-surface transition-colors" data-path="frequently-asked-questions" href="#">Creator FAQ</a></li></ul></div>
+<div><div class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface mb-4">Company</div><ul class="flex flex-col gap-3 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" data-path="trust-and-safety" href="#">Trust &amp; Safety</a></li><li><a class="hover:text-on-surface transition-colors" data-path="system-status" href="#">System Status</a></li><li><a class="hover:text-on-surface transition-colors" href="mailto:ops@vyzo.network">ops@vyzo.network</a></li></ul></div>
+</div>
+<div class="pt-8 border-t border-surface-container-highest flex flex-col sm:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant"><p>© 2025 VYZO Network Inc.</p><div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2"><a class="hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">Terms</a><a class="hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy</a><a class="hover:text-on-surface transition-colors" data-path="security-protocols" href="#">Security</a></div></div>
+</div>
+</footer>
+</body></html>
