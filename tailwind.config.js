@@ -76,51 +76,22 @@ module.exports = {
           "margin-desktop": "4rem"
         },
         "fontFamily": {
-          "body-sm": [
-            "Inter"
-          ],
-          "display-hero": [
-            "Plus Jakarta Sans"
-          ],
-          "headline-lg": [
-            "Plus Jakarta Sans"
-          ],
-          "headline-lg-mobile": [
-            "Plus Jakarta Sans"
-          ],
-          "body-lg": [
-            "Inter"
-          ],
-          "label-caps": [
-            "Inter"
-          ],
-          "headline-xl": [
-            "Plus Jakarta Sans"
-          ],
-          "body-md": [
-            "Inter"
-          ],
-          "label-md": [
-            "Inter"
-          ],
-          "label-lg": [
-            "Inter"
-          ],
-          "metric-display": [
-            "Plus Jakarta Sans"
-          ],
-          "display-hero-mobile": [
-            "Plus Jakarta Sans"
-          ],
-          "headline-xl-mobile": [
-            "Plus Jakarta Sans"
-          ],
-          "headline-md": [
-            "Plus Jakarta Sans"
-          ],
-          "headline-sm": [
-            "Plus Jakarta Sans"
-          ]
+          "sans": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+          "body-sm": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+          "display-hero": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+          "headline-lg": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+          "headline-lg-mobile": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+          "body-lg": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+          "label-caps": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+          "headline-xl": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+          "body-md": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+          "label-md": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+          "label-lg": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+          "metric-display": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+          "display-hero-mobile": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+          "headline-xl-mobile": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+          "headline-md": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+          "headline-sm": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"]
         },
         "fontSize": {
           "body-sm": [
